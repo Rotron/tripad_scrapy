@@ -1,8 +1,8 @@
 # tripad_scrapy
-scrapy crawl <name_of_spider>
+scrapy crawl name_of_spider
 
 Output :
-add "-o <output_file_name>.<extension>" to command line.
+add "-o output_file_name.extension" to command line.
 Extension can be JSON,CSV,XML
 
 Limit the number of item fetched (for example 100):
