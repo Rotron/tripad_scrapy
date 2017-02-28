@@ -1,6 +1,7 @@
 # tripad_scrapy
 TripAdvisor spider
 
+Basic Command:
 scrapy crawl name_of_spider
 
 Output :
