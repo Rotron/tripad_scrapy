@@ -1,4 +1,6 @@
 # tripad_scrapy
+TripAdvisor spider
+
 scrapy crawl name_of_spider
 
 Output :
