@@ -8,8 +8,8 @@ class HotelSpider(scrapy.Spider):
     def parse_review(self, response):
         item = HotelItem()
         item['date'] = response.xpath("//span[contains(@class,'ratingDate')]/@content").extract_first()
-        item['content'] = response.xpath("//div[@class='entry']/p/text()").extract_first()
-        item['rating'] = response.xpath("////span[@class='rate sprite-rating_s rating_s']/img/@alt").extract_first()
+        item['content'] = response.xpath("//div[@class='entry']/p/text()").extract_first().replace("\n", "")
+        item['rating'] = response.xpath("////span[@class='rate sprite-rating_s rating_s']/img/@alt").extract_first()[0]
         return(item)
         
         
@@ -43,8 +43,8 @@ class RestaurantSpider(scrapy.Spider):
     def parse_review(self, response):
         item = RestaurantItem()
         item['date'] = response.xpath("//span[contains(@class,'ratingDate')]/@content").extract_first()
-        item['content'] = response.xpath("//div[@class='entry']/p/text()").extract_first()
-        item['rating'] = response.xpath("//span[@class='rate sprite-rating_s rating_s']/img/@alt").extract_first()
+        item['content'] = response.xpath("//div[@class='entry']/p/text()").extract_first().replace("\n", "")
+        item['rating'] = response.xpath("//span[@class='rate sprite-rating_s rating_s']/img/@alt").extract_first()[0]
         return(item)
         
     
