@@ -8,4 +8,6 @@
 
 class TripadvisorPipeline(object):
     def process_item(self, item, spider):
+        item['content'] = item['content'].replace("\n","")
+        item['rating'] = int(item['rating'][0])
         return item
